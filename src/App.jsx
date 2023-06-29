@@ -32,7 +32,7 @@ const [gastosFiltrados, setGastosFiltrados] =useState([])
 //Verificar si hay un presupuesto valido para no mostrar la pantalla de inicio
   useEffect(() => {
     const presupuestoLS = Number(localStorage.getItem('Presupuesto')?? 0)
-    if(presupuestoLS>=0){
+    if(presupuestoLS>0){
       setIsValidPresupuesto(true)
     }
   }, []);
@@ -94,6 +94,7 @@ const [gastosFiltrados, setGastosFiltrados] =useState([])
         isValidPresupuesto={isValidPresupuesto}
         setIsValidPresupuesto={setIsValidPresupuesto}
       />
+      
       {isValidPresupuesto && (
         <>
           <main>

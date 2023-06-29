@@ -23,7 +23,7 @@ useEffect(() => {
     const nuevoPorcentaje = ((presupuesto - totalDisponible)/ presupuesto * 100).toFixed(2)
     setDisponible(totalDisponible)
     setTimeout(() => {
-      setPorcentaje(nuevoPorcentaje)
+      setPorcentaje(nuevoPorcentaje>0? nuevoPorcentaje : 0)
     }, 700);
 
   }, [gastos]);
